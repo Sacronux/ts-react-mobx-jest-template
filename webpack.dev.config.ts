@@ -2,6 +2,7 @@ import path from "path";
 import * as webpack from "webpack";
 import * as webpackDevServer from 'webpack-dev-server';
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 interface WebpackConfiguration extends webpack.Configuration {
   devServer?: webpackDevServer.Configuration
@@ -15,6 +16,14 @@ const config: WebpackConfiguration = {
   entry: "./src/index.tsx",
   module: {
     rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
+      },
       {
         test: /\.(ts|js)x?$/i,
         exclude: /node_modules/,
@@ -32,13 +41,14 @@ const config: WebpackConfiguration = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".scss"],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "static/index.html",
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin(),
   ],
   devtool: "inline-source-map",
   devServer: {
