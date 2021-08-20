@@ -1,18 +1,23 @@
 {
-    "compilerOptions": {
-      "lib": ["dom", "dom.iterable", "esnext"],
-      "allowJs": false,
-      "allowSyntheticDefaultImports": true,
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "noEmit": true,
-      "jsx": "react",
-      "experimentalDecorators": true,
-    },
-    "include": ["src", "tests"]
-  }
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "noImplicitThis": false,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "types": ["jest", "node"]
+  },
+  "include": ["src", "tests", "jest.config.ts"]
+}

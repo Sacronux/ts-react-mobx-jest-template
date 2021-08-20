@@ -17,7 +17,7 @@ const config: WebpackConfiguration = {
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(s[ac]ss|css)$/i,
         use: [
           "style-loader",
           "css-loader",
@@ -41,7 +41,7 @@ const config: WebpackConfiguration = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".scss"],
+    extensions: [".tsx", ".ts", ".js", ".scss", ".css"],
   },
   plugins: [
     new HtmlWebpackPlugin({

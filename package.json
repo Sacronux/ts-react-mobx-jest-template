@@ -61,7 +61,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --config",
     "start": "webpack serve --host 0.0.0.0 --public=localhost:3000 --inline --config ./webpack.dev.config.ts",
     "build": "webpack --config webpack.prod.config.ts"
   },
